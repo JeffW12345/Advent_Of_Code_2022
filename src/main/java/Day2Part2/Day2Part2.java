@@ -18,22 +18,9 @@ public class Day2Part2 {
             File myObj = new File("src/main/resources/paper-scissor-stone.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
-                String line = myReader.nextLine();
-                String [] playerChoice = line.split(" ");
+                String [] playerChoice = myReader.nextLine().split(" ");
                 playerChoice[1] = newChoice(playerChoice[1], playerChoice[0]);
-
-                // Rock
-                if(playerChoice[1].equals("X")){
-                    score += 1;
-                }
-                // Paper
-                if(playerChoice[1].equals("Y")){
-                    score += 2;
-                }
-                // Scissors
-                if(playerChoice[1].equals("Z")){
-                    score += 3;
-                }
+                score += incrementForChoice(playerChoice[1]);
                 if(didIWin(playerChoice[0], playerChoice[1])){
                     score += 6;
                 }
@@ -47,6 +34,19 @@ public class Day2Part2 {
             e.printStackTrace();
         }
         return score;
+    }
+
+    private static int incrementForChoice(String playerChoice) {
+        // Rock
+        if(playerChoice.equals("X")){
+            return 1;
+        }
+        // Paper
+        if(playerChoice.equals("Y")){
+            return 2;
+        }
+        // Scissors
+        return 3;
     }
 
     private static String newChoice(String me, String opponent) {
