@@ -12,32 +12,32 @@ public class Day2Part2 {
         System.out.println(readFileAndCalculateScore());
     }
 
-    static int readFileAndCalculateScore(){
+    private static int readFileAndCalculateScore(){
         int score = 0;
         try {
             File myObj = new File("src/main/resources/paper-scissor-stone.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String line = myReader.nextLine();
-                String [] parts = line.split(" ");
-                parts[1] = newChoice(parts[1], parts[0]);
+                String [] playerChoice = line.split(" ");
+                playerChoice[1] = newChoice(playerChoice[1], playerChoice[0]);
 
                 // Rock
-                if(parts[1].equals("X")){
+                if(playerChoice[1].equals("X")){
                     score += 1;
                 }
                 // Paper
-                if(parts[1].equals("Y")){
+                if(playerChoice[1].equals("Y")){
                     score += 2;
                 }
                 // Scissors
-                if(parts[1].equals("Z")){
+                if(playerChoice[1].equals("Z")){
                     score += 3;
                 }
-                if(didIWin(parts[0], parts[1])){
+                if(didIWin(playerChoice[0], playerChoice[1])){
                     score += 6;
                 }
-                if(didIDraw(parts[0], parts[1])){
+                if(didIDraw(playerChoice[0], playerChoice[1])){
                     score += 3;
                 }
             }
