@@ -1,8 +1,8 @@
 package Day4Part1;
 
 public class Range {
-    int start;
-    int endInclusive;
+    private final int start;
+    private final int endInclusive;
 
     public Range(int start, int endInclusive) {
         this.start = start;
