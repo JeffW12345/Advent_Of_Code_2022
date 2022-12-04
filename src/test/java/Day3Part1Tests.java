@@ -16,7 +16,6 @@ public class Day3Part1Tests {
         compartments.add(compartment1);
         compartments.add(compartment2);
         Rucksack rucksack = new Rucksack(compartments);
-        int score = rucksack.calculatePriorityScore();
         Assertions.assertEquals(3, rucksack.calculatePriorityScore());
     }
 
