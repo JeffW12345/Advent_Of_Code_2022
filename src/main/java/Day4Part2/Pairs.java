@@ -1,4 +1,4 @@
-package Day4Part1;
+package Day4Part2;
 
 import java.util.ArrayList;
 
@@ -8,10 +8,10 @@ public class Pairs {
     public void add(Pair pair){
         pairs.add(pair);
     }
-    public int numberOfPairsWhereOnePairContainsTheOther() {
+    public int numberOfPairsWithOverlap() {
         int count = 0;
         for(Pair pair : pairs){
-            if(pair.doesOneRangeContainTheOther()){
+            if(pair.doesOneRangeOverlapWithTheOther()){
                 count++;
             }
         }

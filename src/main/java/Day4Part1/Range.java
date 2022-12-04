@@ -9,7 +9,7 @@ public class Range {
         this.endInclusive = endInclusive;
     }
 
-    public boolean doIOverLapWith(Range range2) {
+    public boolean doIContainOrAmContainedBy(Range range2) {
         if(this.start >= range2.start && this.endInclusive <= range2.endInclusive){
             return true;
         }

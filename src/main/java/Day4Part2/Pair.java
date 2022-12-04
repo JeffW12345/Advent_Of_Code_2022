@@ -1,4 +1,4 @@
-package Day4Part1;
+package Day4Part2;
 
 public class Pair {
     private final Range range1;
@@ -9,7 +9,7 @@ public class Pair {
         this.range2 = range2;
     }
 
-    boolean doesOneRangeContainTheOther(){
-        return range1.doIContainOrAmContainedBy(range2);
+    public boolean doesOneRangeOverlapWithTheOther(){
+        return range1.doIOverLapWith(range2);
     }
 }
