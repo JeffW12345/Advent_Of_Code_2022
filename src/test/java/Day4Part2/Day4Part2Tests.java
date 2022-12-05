@@ -1,8 +1,5 @@
-package Day4Part2Tests;
+package Day4Part2;
 
-import Day4Part2.Pair;
-import Day4Part2.Pairs;
-import Day4Part2.Range;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
