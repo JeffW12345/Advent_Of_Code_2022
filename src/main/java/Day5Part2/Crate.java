@@ -7,10 +7,6 @@ public class Crate {
         return listOfLetters.length() == 0 ? "" : listOfLetters.charAt(0) + "";
     }
 
-    public void removeTopRow(){
-        listOfLetters = listOfLetters.length() == 0 ? "" : listOfLetters.substring(1);
-    }
-
     public void addCharacterToBottomRow(String toAdd){
         listOfLetters = listOfLetters + toAdd;
     }
