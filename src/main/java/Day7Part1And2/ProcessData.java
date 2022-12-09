@@ -31,10 +31,7 @@ public class ProcessData {
                 directories.createAndStore(row.split(" ")[1], parentDirectory);
             }
             else{
-                int storage = Integer.parseInt(row.split(" ")[0]);
-                String fileName = row.split(" ")[1];
-                FileInDirectory file = new FileInDirectory(fileName, storage);
-                parentDirectory.addFile(file);
+                parentDirectory.addFile(Integer.parseInt(row.split(" ")[0]));
             }
         }
     }

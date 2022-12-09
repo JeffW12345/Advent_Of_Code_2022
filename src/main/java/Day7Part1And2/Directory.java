@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Directory {
     private final Directory parent;
     private final boolean hasParent;
-    private final ArrayList<FileInDirectory> files = new ArrayList<>();
     private final ArrayList<Directory> children = new ArrayList<>();
     private int fileSizeThisDirectory = 0;
 
@@ -24,18 +23,8 @@ public class Directory {
         current.addChild(currentFinal); // Adding child to root
         }
 
-    public void addFile(FileInDirectory file){
-        boolean alreadyStored = false;
-        for(FileInDirectory aFile : files){
-            if (aFile.getName().equals(file.getName())) {
-                alreadyStored = true;
-                break;
-            }
-        }
-        if(!alreadyStored){
-            files.add(file);
-            fileSizeThisDirectory += file.getSize();
-        }
+    public void addFile(int fileSize){
+            fileSizeThisDirectory += fileSize;
     }
     public void addChild(Directory directory){
         if(!children.contains(directory)) children.add(directory);
