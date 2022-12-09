@@ -7,7 +7,6 @@ public class Directory {
     private final boolean hasParent;
     private final ArrayList<FileInDirectory> files = new ArrayList<>();
     private final ArrayList<Directory> children = new ArrayList<>();
-
     private int fileSizeThisDirectory = 0;
 
     public Directory(Directory parent, String directoryName) {
@@ -15,7 +14,6 @@ public class Directory {
         hasParent = !directoryName.equals("Root");
         updateAllAncestors();
     }
-
     private void updateAllAncestors(){
         Directory current = this;
         Directory currentFinal = current;
@@ -23,7 +21,7 @@ public class Directory {
             current.parent.addChild(currentFinal);
             current = current.parent;
             }
-        current.addChild(currentFinal);
+        current.addChild(currentFinal); // Adding child to root
         }
 
     public void addFile(FileInDirectory file){
@@ -42,8 +40,8 @@ public class Directory {
     public void addChild(Directory directory){
         if(!children.contains(directory)) children.add(directory);
     }
-    public int getFileUsageImmediateDirectory()
-    {
+
+    public int getFileUsageImmediateDirectory() {
         return fileSizeThisDirectory;
     }
 

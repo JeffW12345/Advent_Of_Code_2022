@@ -4,7 +4,6 @@ public class FileInDirectory {
     private final String name;
     private final int thisFileSize;
 
-
     public FileInDirectory(String name, int size) {
         this.name = name;
         this.thisFileSize = size;
