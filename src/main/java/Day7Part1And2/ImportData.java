@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class ImportData {
     private final File file = new File("src/main/resources/directories.txt");
-    private ArrayList<String> lines = new ArrayList<>();
+    private final ArrayList<String> lines = new ArrayList<>();
 
     public void importData() {
         try {

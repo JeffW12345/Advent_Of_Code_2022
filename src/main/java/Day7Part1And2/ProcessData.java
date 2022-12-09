@@ -1,7 +1,7 @@
 package Day7Part1And2;
 
 public class ProcessData {
-    ImportData importData;
+    private final ImportData importData;
     public ProcessData(ImportData data) {
         this.importData = data;
     }
@@ -16,7 +16,7 @@ public class ProcessData {
                parentDirectory = root;
                continue;
             }
-            if(row.equals("$ cd ..") && parentDirectory.hasParent){
+            if(row.equals("$ cd ..") ){
                 parentDirectory = parentDirectory.getParent();
                 continue;
             }

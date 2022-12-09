@@ -4,16 +4,14 @@ import java.util.ArrayList;
 
 public class Directory {
     private final Directory parent;
-    boolean hasParent;
-    ArrayList<FileInDirectory> files = new ArrayList<>();
-    ArrayList<Directory> children = new ArrayList<>();
-    private final String directoryName;
+    private final boolean hasParent;
+    private final ArrayList<FileInDirectory> files = new ArrayList<>();
+    private final ArrayList<Directory> children = new ArrayList<>();
 
     private int fileSizeThisDirectory = 0;
 
     public Directory(Directory parent, String directoryName) {
         this.parent = parent;
-        this.directoryName = directoryName;
         hasParent = !directoryName.equals("Root");
         updateAllAncestors();
     }
@@ -27,6 +25,7 @@ public class Directory {
             }
         current.addChild(currentFinal);
         }
+
     public void addFile(FileInDirectory file){
         boolean alreadyStored = false;
         for(FileInDirectory aFile : files){

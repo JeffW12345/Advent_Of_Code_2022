@@ -2,15 +2,15 @@ package Day7Part1And2;
 
 public class FileInDirectory {
     private String name;
-    private int size;
+    private int thisFileSize;
+
 
     public FileInDirectory(String name, int size) {
         this.name = name;
-        this.size = size;
+        this.thisFileSize = size;
     }
-
     public int getSize() {
-        return size;
+        return thisFileSize;
     }
     public String getName() {
         return name;
