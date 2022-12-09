@@ -10,7 +10,7 @@ public class ProcessData {
         Directory parentDirectory = new Directory(null, "Root");
         Directory root = parentDirectory;
         for(int i = 0; i < importData.numberOfRows(); i++){
-            String row = importData.realeaseDataRow(i);
+            String row = importData.releaseDataRow(i);
             if(row.equals("$ cd /")){
                parentDirectory = root;
                continue;

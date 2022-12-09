@@ -23,7 +23,7 @@ public class ImportData {
         }
     }
 
-    public String realeaseDataRow(int rowNumber){
+    public String releaseDataRow(int rowNumber){
         return lines.get(rowNumber);
     }
 
