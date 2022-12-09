@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ImportData {
-    private final File file = new File("src/main/resources/crates.txt");
+    private final File file = new File("src/main/resources/directories.txt");
     private ArrayList<String> lines = new ArrayList<>();
 
     public void importData() {
