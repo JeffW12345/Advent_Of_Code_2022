@@ -1,4 +1,4 @@
-package Day7Part1;
+package Day7Part1And2;
 
 import java.util.ArrayList;
 
@@ -43,7 +43,7 @@ public class Directory {
     public void addChild(Directory directory){
         if(!children.contains(directory)) children.add(directory);
     }
-    public int fileSizeImmediateDirectory()
+    public int getFileUsageImmediateDirectory()
     {
         return fileSizeThisDirectory;
     }

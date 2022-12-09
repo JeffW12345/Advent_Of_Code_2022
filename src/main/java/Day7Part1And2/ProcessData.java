@@ -1,4 +1,4 @@
-package Day7Part1;
+package Day7Part1And2;
 
 public class ProcessData {
     ImportData importData;
