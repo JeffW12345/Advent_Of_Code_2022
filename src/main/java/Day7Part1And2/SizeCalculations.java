@@ -6,15 +6,15 @@ import java.util.HashSet;
 
 public class SizeCalculations {
 
-    private HashSet<Directory> directories;
+    private static HashSet<Directory> directories;
     private static ArrayList<Long> directorySizes;
 
-    public void controller(HashSet<Directory> directories){
-        this.directories = directories;
+    public static void controller(HashSet<Directory> aDirectory){
+        directories = aDirectory;
         printOutput();
     }
 
-    public long totalFileSizeFor(Directory toCheck){
+    public static long totalFileSizeFor(Directory toCheck){
         long total = 0;
         for(Directory directory : directories){
             if(directory == toCheck || toCheck.containsChild(directory)){
@@ -23,7 +23,7 @@ public class SizeCalculations {
         }
         return total;
     }
-    public long fileSizeAllDirectories(long belowOrEqual){
+    public static long fileSizeAllDirectories(long belowOrEqual){
         long total = 0;
         directorySizes =  new ArrayList<>();
         for(Directory directory : directories){
@@ -36,7 +36,7 @@ public class SizeCalculations {
         return total;
     }
 
-    public long fileSizeAllDirectories(){
+    public static long fileSizeAllDirectories(){
         long total = 0;
         for(Directory directory : directories){
             total += directory.getFileUsageImmediateDirectory();
@@ -44,7 +44,7 @@ public class SizeCalculations {
         return total;
     }
 
-    public long smallestFileOver(long toCheck){
+    public static long smallestFileOver(long toCheck){
         Collections.sort(directorySizes);
         for(long amount: directorySizes){
             if(amount >= toCheck){
@@ -54,14 +54,14 @@ public class SizeCalculations {
         return 0;
     }
 
-    public long sizeOfFileToDelete(int totalSpaceOnHardDrive, int spaceRemainingNeeded) {
+    public static long sizeOfFileToDelete(int totalSpaceOnHardDrive, int spaceRemainingNeeded) {
         long currentSpaceOccupied = fileSizeAllDirectories();
         long free = totalSpaceOnHardDrive - currentSpaceOccupied;
         long deficit = spaceRemainingNeeded - free;
         return smallestFileOver(deficit);
     }
 
-    public void printOutput(){
+    public static void printOutput(){
         System.out.println("Part 1: " + fileSizeAllDirectories(100000));
         System.out.println("Part 2: " + sizeOfFileToDelete(70000000, 30000000));
     }
