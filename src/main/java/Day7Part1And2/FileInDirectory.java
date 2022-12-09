@@ -1,8 +1,8 @@
 package Day7Part1And2;
 
 public class FileInDirectory {
-    private String name;
-    private int thisFileSize;
+    private final String name;
+    private final int thisFileSize;
 
 
     public FileInDirectory(String name, int size) {
