@@ -7,31 +7,31 @@ public class ProcessData {
     }
 
     public void process(Directories directories){
-        Directory parentDirectory = new Directory(null, "Root");
-        Directory root = parentDirectory;
+        Directory currentDirectory = new Directory(null, "Root");
+        Directory root = currentDirectory;
         for(int i = 0; i < importData.numberOfRows(); i++){
             String row = importData.releaseDataRow(i);
             if(row.equals("$ cd /")){
-               parentDirectory = root;
+               currentDirectory = root;
                continue;
             }
             if(row.equals("$ cd ..") ){
-                parentDirectory = parentDirectory.getParent();
+                currentDirectory = currentDirectory.getParent();
                 continue;
             }
             if(row.startsWith("$ cd ")){
                 String directoryName = row.split(" ")[2];
-                parentDirectory = directories.createAndStore(directoryName, parentDirectory);
+                currentDirectory = directories.createAndStore(directoryName, currentDirectory);
                 continue;
             }
             if(row.equals("$ ls")){
                 continue;
             }
             if(row.startsWith("dir ")){
-                directories.createAndStore(row.split(" ")[1], parentDirectory);
+                directories.createAndStore(row.split(" ")[1], currentDirectory);
             }
             else{
-                parentDirectory.addFile(Integer.parseInt(row.split(" ")[0]));
+                currentDirectory.addFile(Integer.parseInt(row.split(" ")[0]));
             }
         }
     }
