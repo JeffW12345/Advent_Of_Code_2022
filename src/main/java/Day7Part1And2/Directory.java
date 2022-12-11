@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Directory {
     private Directories directories;
     private Directory parent;
-    private boolean hasParent = false;
+    private boolean hasParent;
     private final ArrayList<Directory> children = new ArrayList<>();
     private int fileSizeThisDirectory = 0;
 
@@ -22,8 +22,7 @@ public class Directory {
     public void createObjects(ArrayList<String> data) {
         Directory currentDirectory = new Directory(null, "Root");
         Directory root = currentDirectory;
-        for (int i = 0; i < data.size(); i++) {
-            String row = data.get(i);
+        for (String row : data) {
             if (row.equals("$ cd /")) {
                 currentDirectory = root;
                 continue;
@@ -67,10 +66,6 @@ public class Directory {
 
     public int getFileUsageImmediateDirectory() {
         return fileSizeThisDirectory;
-    }
-
-    public Directory getParent(){
-        return this.parent;
     }
 
     public boolean containsChild(Directory directory) {

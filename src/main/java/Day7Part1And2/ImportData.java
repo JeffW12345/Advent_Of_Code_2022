@@ -1,19 +1,18 @@
 package Day7Part1And2;
 
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ImportData {
     private final File file = new File("src/main/resources/directories.txt");
-    private final ArrayList<String> lines = new ArrayList<>();
+    private final ArrayList<String> importedData = new ArrayList<>();
 
     public void importAndProcess(){
         importData();
         Directories directories = new Directories();
         Directory directory = new Directory(directories);
-        directory.createObjects(lines);
+        directory.createObjects(importedData);
         directories.printResults();
     }
     public void importData() {
@@ -21,7 +20,7 @@ public class ImportData {
             Scanner scanner = new Scanner(this.file);
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                lines.add(line);
+                importedData.add(line);
             }
             scanner.close();
         } catch (Exception e) {
