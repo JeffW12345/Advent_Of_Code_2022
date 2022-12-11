@@ -71,4 +71,8 @@ public class Directory {
     public boolean containsChild(Directory directory) {
         return children.contains(directory);
     }
+
+    public long numberPlusImmediateDirectory(long total) {
+        return fileSizeThisDirectory + total;
+    }
 }

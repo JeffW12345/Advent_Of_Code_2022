@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.HashSet;
 
 public class SizeCalculations {
-
     private static HashSet<Directory> directories;
     private static ArrayList<Long> directorySizes;
 
@@ -18,7 +17,7 @@ public class SizeCalculations {
         long total = 0;
         for(Directory directory : directories){
             if(directory == toCheck || toCheck.containsChild(directory)){
-                total += directory.getFileUsageImmediateDirectory();
+                total = directory.numberPlusImmediateDirectory(total);
             }
         }
         return total;
@@ -39,7 +38,7 @@ public class SizeCalculations {
     public static long fileSizeAllDirectories(){
         long total = 0;
         for(Directory directory : directories){
-            total += directory.getFileUsageImmediateDirectory();
+            total = directory.numberPlusImmediateDirectory(total);
         }
         return total;
     }
