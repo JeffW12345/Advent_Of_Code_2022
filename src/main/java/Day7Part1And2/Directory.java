@@ -19,7 +19,7 @@ public class Directory {
         this.directories = directories;
     }
 
-    public void createObjects(ArrayList<String> data) {
+    public void createAndStoreDirectories(ArrayList<String> data) {
         Directory currentDirectory = new Directory(null, "Root");
         Directory root = currentDirectory;
         for (String row : data) {
@@ -63,7 +63,7 @@ public class Directory {
     public void addChild(Directory directory){
         if(!children.contains(directory)) children.add(directory);
     }
-    
+
     public boolean containsChild(Directory directory) {
         return children.contains(directory);
     }

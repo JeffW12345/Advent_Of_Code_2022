@@ -12,7 +12,7 @@ public class ImportData {
         importData();
         Directories directories = new Directories();
         Directory directory = new Directory(directories);
-        directory.createObjects(importedData);
+        directory.createAndStoreDirectories(importedData);
         directories.printResults();
     }
     public void importData() {
