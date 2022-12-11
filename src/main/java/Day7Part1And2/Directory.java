@@ -63,11 +63,7 @@ public class Directory {
     public void addChild(Directory directory){
         if(!children.contains(directory)) children.add(directory);
     }
-
-    public int getFileUsageImmediateDirectory() {
-        return fileSizeThisDirectory;
-    }
-
+    
     public boolean containsChild(Directory directory) {
         return children.contains(directory);
     }
