@@ -9,6 +9,13 @@ public class ImportData {
     private final File file = new File("src/main/resources/directories.txt");
     private final ArrayList<String> lines = new ArrayList<>();
 
+    public void importAndProcess(){
+        importData();
+        Directories directories = new Directories();
+        Directory directory = new Directory(directories);
+        directory.createObjects(lines);
+        directories.printResults();
+    }
     public void importData() {
         try {
             Scanner scanner = new Scanner(this.file);
@@ -22,14 +29,5 @@ public class ImportData {
             e.printStackTrace();
         }
     }
-
-    public String releaseDataRow(int rowNumber){
-        return lines.get(rowNumber);
-    }
-
-    public int numberOfRows(){
-        return lines.size();
-    }
-
 }
 
