@@ -1,7 +1,6 @@
-package Day16Part1;
+package Day16Part1.valve;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Valve {
     private int flowScore;

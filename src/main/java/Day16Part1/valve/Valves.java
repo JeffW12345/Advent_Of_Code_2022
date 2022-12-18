@@ -1,4 +1,6 @@
-package Day16Part1;
+package Day16Part1.valve;
+
+import Day16Part1.valve.Valve;
 
 import java.util.HashMap;
 

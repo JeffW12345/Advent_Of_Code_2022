@@ -1,5 +1,8 @@
 package Day16Part1;
 
+import Day16Part1.valve.Valve;
+import Day16Part1.valve.Valves;
+
 import java.util.ArrayList;
 
 public class ProcessData {
