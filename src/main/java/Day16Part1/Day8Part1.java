@@ -1,4 +1,4 @@
-package Day8Part1;
+package Day16Part1;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -9,6 +9,6 @@ public class Day8Part1 {
         System.out.println(new URL("https://adventofcode.com/2022/day/16"));
         ImportData importData = new ImportData();
         importData.importData();
-        ProcessData processData = new ProcessData(importData);
+        new ProcessData(importData);
     }
 }
